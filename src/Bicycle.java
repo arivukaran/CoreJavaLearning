@@ -2,10 +2,10 @@ public class Bicycle {
     Integer cadence;
     Integer gear;
     Integer speed;
-    public Bicycle(int i, int j, int k) {
-        cadence = i;
-        gear = j;
-        speed = k;
+    public Bicycle(int cadence, int gear, int speed) {
+        this.cadence = cadence;
+        this.gear = gear;
+        this.speed = speed;
     }
     void display(){System.out.println(cadence+" "+gear+" "+speed);}
 
