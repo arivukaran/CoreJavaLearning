@@ -2,7 +2,11 @@ public class Employee {
 
     private int EmpNo;
     private String Name;
-    private  int DepNo;
+    private Department department;
+
+    public void setName(String name) {
+        Name = name;
+    }
 
     public int getEmpNo() {
         return EmpNo;
@@ -16,34 +20,28 @@ public class Employee {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public int getDepNo() {
-        return DepNo;
-    }
-
-    public void setDepNo(int depNo) {
-        DepNo = depNo;
-    }
     public void Display() {
-        System.out.println("EmpNo:" + getEmpNo() + "  89Emp Name:" + getName() + " Dept:" + getDepNo() );
+        System.out.println("EmpNo:" + getEmpNo() + "  89Emp Name:" + getName() + " Dept:" + department.getDeptNo() );
     }
     public static void main(String[] args) {
 
         Employee e1 = new Employee();
         e1.setEmpNo(100);
         e1.setName("Prabhakaran");
-        e1.setDepNo(4001);
 
+        try {
+            e1.department.setDeptNo(100);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Null pointer exception caught");
+        }
         e1.Display();
 
         Employee e2 = new Employee();
-        e1.setEmpNo(101);
-        e1.setName("Kaavya");
-        e1.setDepNo(4002);
-
-        e1.Display();
+        e2.setEmpNo(101);
+        e2.setName("Kaavya");
+        e2.department.setDeptNo(102);
+        e2.Display();
     }
 }
